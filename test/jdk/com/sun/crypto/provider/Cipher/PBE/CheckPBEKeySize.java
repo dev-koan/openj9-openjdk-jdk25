@@ -47,7 +47,7 @@ public class CheckPBEKeySize {
             skFac.generateSecret(new PBEKeySpec("test123".toCharArray()));
 
         // Initialize the PBE cipher
-        Cipher cipher = Cipher.getInstance(ALGO);
+        Cipher cipher = Cipher.getInstance(ALGO, "SunJCE");
         cipher.init(Cipher.ENCRYPT_MODE, skey);
 
         // Permit access to the Cipher.spi field (a CipherSpi object)
